@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGIPINE - Data Integration Center</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">DIGIPINE</span>
+                <span class="logo-tagline">Market Intelligence</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Analytics</a></li>
+                <li><a href="upload.html" class="active">Data Integration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="upload-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Data Integration Center</h1>
+                <p class="hero-subtitle">Transform your raw business data into actionable market intelligence</p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>Instant Processing</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔍</span>
+                        <span>Smart Analytics</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <span>Real-time Insights</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="container">
+            <div class="upload-container" id="uploadFormContainer">
+                <div class="upload-header">
+                    <h2>Upload Your Business Data</h2>
+                    <p>Support for multiple formats: CSV, JSON, Excel files</p>
+                </div>
+
+                <!-- Data Type Selector -->
+                <div class="data-type-selector">
+                    <button class="data-type-btn active" data-type="sales">
+                        <span class="btn-icon">💰</span>
+                        <span class="btn-label">Sales Data</span>
+                        <span class="btn-desc">Orders, revenue, products</span>
+                    </button>
+                    <button class="data-type-btn" data-type="inventory">
+                        <span class="btn-icon">📦</span>
+                        <span class="btn-label">Inventory Data</span>
+                        <span class="btn-desc">Stock levels, categories</span>
+                    </button>
+                    <button class="data-type-btn" data-type="performance">
+                        <span class="btn-icon">📊</span>
+                        <span class="btn-label">Performance Data</span>
+                        <span class="btn-desc">Metrics, KPIs, delivery times</span>
+                    </button>
+                </div>
+
+                <!-- Upload Area -->
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <div class="upload-icon">📁</div>
+                        <div class="upload-text">
+                            <h3>Drop your file here or click to browse</h3>
+                            <p>Upload sales data including orders, products, and revenue information</p>
+                        </div>
+                        <div class="supported-formats">
+                            <span class="format-tag">CSV</span>
+                            <span class="format-tag">JSON</span>
+                            <span class="format-tag">XLSX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="file" id="fileInput" class="file-input" accept=".csv,.json,.xlsx">
+
+                <div class="selected-file" id="selectedFile"></div>
+
+                <!-- Sample Data Section -->
+                <div class="sample-data-section">
+                    <h4>Want to try first? Use our sample data:</h4>
+                    <div class="sample-buttons">
+                        <button class="sample-btn" data-sample="ecommerce">
+                            <span class="sample-icon">🛒</span>
+                            Quick-Commerce Orders
+                        </button>
+                        <button class="sample-btn" data-sample="regional">
+                            <span class="sample-icon">🗺️</span>
+                            Regional Performance
+                        </button>
+                        <button class="sample-btn" data-sample="competitive">
+                            <span class="sample-icon">⚔️</span>
+                            Competitive Analysis
+                        </button>
+                    </div>
+                </div>
+
+                <button class="upload-button" id="uploadButton" disabled>
+                    <span class="btn-text">Analyze Data</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+
+                <div class="result-message" id="resultMessage"></div>
+            </div>
+
+            <!-- Results Section (Hidden Initially) -->
+            <div class="upload-results" id="uploadResults" style="display: none;">
+                <div class="results-header">
+                    <div class="success-icon">✅</div>
+                    <h2>Data Analysis Complete!</h2>
+                    <p class="records-count" id="recordsCount">Data processed successfully!</p>
+                </div>
+
+                <div class="results-content">
+                    <!-- Processing Summary -->
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <div class="summary-icon">📦</div>
+                            <div class="summary-value" id="totalRecords">150</div>
+                            <div class="summary-label">Total Records</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">✅</div>
+                            <div class="summary-value" id="validRecords">147</div>
+                            <div class="summary-label">Valid Records</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">⚠️</div>
+                            <div class="summary-value" id="errorRecords">3</div>
+                            <div class="summary-label">Errors/Duplicates</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon">⏱️</div>
+                            <div class="summary-value" id="processingTime">2.3s</div>
+                            <div class="summary-label">Processing Time</div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Preview -->
+                    <div class="analytics-preview">
+                        <div class="preview-section">
+                            <h3>📈 Order Trends</h3>
+                            <div class="chart-container">
+                                <canvas id="orderVolumeChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="preview-section">
+                            <h3>🎯 Category Distribution</h3>
+                            <div class="chart-container">
+                                <canvas id="categoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI-Generated Insights -->
+                    <div class="insights-section">
+                        <h3>🤖 AI-Generated Insights</h3>
+                        <div class="insights-list">
+                            <!-- Insights will be dynamically generated -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="results-actions">
+                        <button class="action-btn primary-btn" onclick="window.location.href='dashboard.html'">
+                            View Full Dashboard
+                        </button>
+                        <button class="action-btn secondary-btn" id="uploadAnotherBtn">
+                            Upload Another File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Enhanced CSS for the new upload system */
+        .chart-container {
+            height: 300px;
+            position: relative;
+        }
+
+        .analytics-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .preview-section {
+            background: var(--bg-secondary, #f8fafc);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light, #e2e8f0);
+        }
+
+        .insights-section {
+            background: var(--bg-secondary, #f8fafc);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-light, #e2e8f0);
+            margin: 2rem 0;
+        }
+
+        .insights-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--text-primary, #1e293b);
+        }
+
+        .results-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+        }
+
+        .secondary-btn {
+            background: #f8fafc;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .analytics-preview {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+
+    <script src="upload_new.js"></script>
+    <script>
+        // Smooth page transitions
+        document.querySelectorAll('a[href]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only animate for internal page navigation
+                if (href.endsWith('.html') && !href.includes('#')) {
+                    e.preventDefault();
+                    document.body.classList.add('page-exit');
+                    
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

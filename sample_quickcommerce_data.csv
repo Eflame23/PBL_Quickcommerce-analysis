@@ -1,0 +1,31 @@
+order_id,product_name,category,quantity,price,order_date,delivery_area,pincode,platform,customer_age,delivery_time_minutes
+QC001,iPhone 15 Pro,Electronics,1,79999,2024-11-01,Bandra West,400050,Zepto,28,18
+QC002,Organic Bananas,Groceries,2,45,2024-11-01,Andheri East,400069,Blinkit,34,22
+QC003,Dove Soap,Personal Care,3,35,2024-11-01,Powai,400076,Swiggy Instamart,29,15
+QC004,Nike Air Max,Fashion,1,8999,2024-11-01,Malad West,400064,Zepto,25,25
+QC005,Maggi Noodles,Food,5,75,2024-11-01,Borivali East,400066,Blinkit,31,12
+QC006,Samsung Galaxy S24,Electronics,1,65999,2024-11-02,Kandivali West,400067,Zepto,35,20
+QC007,Amul Milk,Groceries,2,54,2024-11-02,Goregaon West,400062,Swiggy Instamart,42,14
+QC008,Lakme Lipstick,Beauty,1,450,2024-11-02,Versova,400061,Blinkit,26,19
+QC009,Levi's Jeans,Fashion,1,2999,2024-11-02,Juhu,400049,Zepto,30,23
+QC010,Coca Cola,Beverages,4,160,2024-11-02,Santa Cruz West,400054,Swiggy Instamart,33,16
+QC011,MacBook Pro,Electronics,1,129999,2024-11-03,Bandra East,400051,Zepto,29,27
+QC012,Tata Tea,Groceries,1,89,2024-11-03,Kurla West,400070,Blinkit,38,11
+QC013,Fogg Deodorant,Personal Care,2,299,2024-11-03,Chembur,400071,Swiggy Instamart,24,17
+QC014,Adidas Shoes,Fashion,1,5499,2024-11-03,Ghatkopar East,400077,Zepto,27,21
+QC015,Britannia Biscuits,Food,3,120,2024-11-03,Vikhroli,400079,Blinkit,36,13
+QC016,OnePlus 12,Electronics,1,54999,2024-11-04,Mulund West,400080,Zepto,32,24
+QC017,Haldiram Namkeen,Snacks,2,180,2024-11-04,Thane West,400601,Swiggy Instamart,40,18
+QC018,L'Oreal Shampoo,Beauty,1,349,2024-11-04,Kalyan West,421301,Blinkit,28,26
+QC019,Zara T-Shirt,Fashion,1,1299,2024-11-04,Dombivli East,421201,Zepto,25,29
+QC020,Red Bull,Beverages,6,540,2024-11-04,Badlapur,421503,Swiggy Instamart,31,22
+QC021,HP Laptop,Electronics,1,45999,2024-11-05,Ulhasnagar,421003,Zepto,34,31
+QC022,Mother Dairy Curd,Groceries,1,25,2024-11-05,Ambernath,421501,Blinkit,37,15
+QC023,Nivea Cream,Personal Care,1,199,2024-11-05,Bhiwandi,421302,Swiggy Instamart,29,20
+QC024,H&M Dress,Fashion,1,2499,2024-11-05,Mira Road,401107,Zepto,26,28
+QC025,Parle-G Biscuits,Food,4,80,2024-11-05,Virar West,401303,Blinkit,33,25
+QC026,iPad Air,Electronics,1,59999,2024-11-06,Nallasopara,401209,Zepto,30,32
+QC027,Kissan Jam,Groceries,1,95,2024-11-06,Vasai West,401202,Swiggy Instamart,35,19
+QC028,Garnier Face Wash,Beauty,2,198,2024-11-06,Nalasopara East,401209,Blinkit,27,17
+QC029,Puma Tracksuit,Fashion,1,3999,2024-11-06,Dahisar East,400068,Zepto,28,24
+QC030,Monster Energy,Beverages,3,270,2024-11-06,Borivali West,400103,Swiggy Instamart,32,21
